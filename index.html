@@ -4,246 +4,361 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pixels & Panels | IIT Madras BS</title>
+  <title>Pixels & Panels | IIT Madras BS Movies & Anime Society</title>
+  <meta name="description" content="The official Movies and Anime Society at IIT Madras BS Degree Programme. Celebrating visual storytelling, film screenings, anime discussions, and creative community.">
+  
   <link rel="stylesheet" href="static/style.css">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0&display=swap">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0&display=swap">
 </head>
 
 <body>
 
+  <!-- Navigation Bar -->
   <nav id="navbar">
     <a href="index.html" class="nav-logo">
-      <span class="material-symbols-outlined md-28">picture_in_picture_small</span>
+      <span class="material-symbols-outlined md-28">movie_filter</span>
       <span>Pixels&Panels</span>
     </a>
+
     <div class="nav-links">
-      <a href="index.html">Home</a>
+      <a href="index.html" class="active">Home</a>
       <a href="events.html">Events</a>
       <a href="about.html">About</a>
+      <a href="#" class="btn-cta trigger-proposal-modal">Propose Screening</a>
     </div>
-    <button class="nav-toggle" aria-label="Toggle menu"><span
-        class="material-symbols-outlined md-28">menu</span></button>
-    <a href="https://tr.ee/pxVWWx1ZK_" class="btn-cta">
-      Join Us
-      <span class="material-symbols-outlined md-18">arrow_outward</span>
-    </a>
+
+    <button class="nav-toggle" aria-label="Toggle navigation menu">
+      <span class="material-symbols-outlined md-28">menu</span>
+    </button>
   </nav>
 
+  <!-- Hero Header -->
   <header class="hero">
     <div class="hero-bg">
-      <img src="static/images/hero.png" alt="Background">
+      <img src="static/images/hero.png" alt="Pixels and Panels Hero Atmosphere">
       <div class="hero-overlay"></div>
     </div>
+    
     <div class="hero-content">
-      <p class="hero-tagline">Transforming Pixels into Communities</p>
-      <h1>PANELS</h1>
-      <p class="hero-desc">The premier society for Anime and Cinema enthusiasts at IIT Madras BS. Celebrating the art of
-        visual storytelling.</p>
+      <div class="hero-badge">
+        <span class="material-symbols-outlined md-18">local_movies</span>
+        IIT Madras BS Society
+      </div>
+      
+      <h1>PIXELS & PANELS</h1>
+      
+      <p class="hero-desc">
+        The premier student community celebrating global cinema, anime masterpieces, and visual storytelling at IIT Madras BS.
+      </p>
+
+      <div class="hero-actions">
+        <a href="https://tr.ee/pxVWWx1ZK_" target="_blank" rel="noopener" class="btn-cta">
+          Join Our Community
+          <span class="material-symbols-outlined md-18">arrow_forward</span>
+        </a>
+        <button class="btn-secondary trigger-proposal-modal">
+          <span class="material-symbols-outlined md-18">add_to_queue</span>
+          Suggest Movie/Anime
+        </button>
+      </div>
+
+      <!-- Society Key Stats Ticker Bar -->
+      <div class="stats-bar">
+        <div class="stat-item">
+          <div class="stat-num">500+</div>
+          <div class="stat-label">Active Members</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">40+</div>
+          <div class="stat-label">Screenings Held</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">4</div>
+          <div class="stat-label">Core Verticals</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Student Driven</div>
+        </div>
+      </div>
     </div>
   </header>
 
+  <!-- Verticals Section -->
   <section class="verticals">
     <div class="container">
       <div class="verticals-header">
-        <div>
-          <span class="section-label">[ Our Verticals ]</span>
-          <h2 style="font-size: clamp(2.5rem, 5vw, 5rem); line-height: 1; font-weight: 900;">Curating Cinema <br><span
-              class="serif italic">Experiences</span></h2>
-        </div>
+        <span class="section-label">[ WHAT WE DO ]</span>
+        <h2>Explore Our <span class="serif italic">Verticals</span></h2>
       </div>
 
       <div class="verticals-grid">
         <a href="events.html" class="v-card">
           <div class="v-image">
-            <img src="static/images/vertical-anime.avif" alt="Anime">
+            <img src="static/images/vertical-anime.avif" alt="Anime Screenings">
           </div>
-          <div class="v-title">
-            <h3>ANIME SCREENINGS</h3>
-            <span class="material-symbols-outlined md-18">arrow_outward</span>
-          </div>
-        </a>
-        <a href="events.html" class="v-card">
-          <div class="v-image">
-            <img src="static/images/vertical-movies.avif" alt="Movies">
-          </div>
-          <div class="v-title">
-            <h3>MOVIE NIGHTS</h3>
-            <span class="material-symbols-outlined md-18">arrow_outward</span>
+          <div class="v-body">
+            <div class="v-title">
+              <h3>ANIME SCREENINGS</h3>
+              <span class="material-symbols-outlined md-20">arrow_outward</span>
+            </div>
+            <p class="v-desc">High-definition communal screenings of classic films, shonen highlights, and indie anime gems.</p>
           </div>
         </a>
+
         <a href="events.html" class="v-card">
           <div class="v-image">
-            <img src="static/images/vertical-analysis.avif" alt="Analysis">
+            <img src="static/images/vertical-movies.avif" alt="Movie Nights">
           </div>
-          <div class="v-title">
-            <h3>PANEL REVIEWS</h3>
-            <span class="material-symbols-outlined md-18">arrow_outward</span>
+          <div class="v-body">
+            <div class="v-title">
+              <h3>MOVIE NIGHTS</h3>
+              <span class="material-symbols-outlined md-20">arrow_outward</span>
+            </div>
+            <p class="v-desc">Open-air and virtual watch parties covering sci-fi, psychological thrillers, and world cinema classics.</p>
           </div>
         </a>
+
         <a href="events.html" class="v-card">
           <div class="v-image">
-            <img src="static/images/vertical-cosplay.avif" alt="Cosplay">
+            <img src="static/images/vertical-analysis.avif" alt="Panel Reviews">
           </div>
-          <div class="v-title">
-            <h3>COSPLAY MEETS</h3>
-            <span class="material-symbols-outlined md-18">arrow_outward</span>
+          <div class="v-body">
+            <div class="v-title">
+              <h3>PANEL REVIEWS</h3>
+              <span class="material-symbols-outlined md-20">arrow_outward</span>
+            </div>
+            <p class="v-desc">In-depth roundtable breakdowns analyzing cinematography, story mechanics, score composition, and themes.</p>
+          </div>
+        </a>
+
+        <a href="events.html" class="v-card">
+          <div class="v-image">
+            <img src="static/images/vertical-cosplay.avif" alt="Cosplay Meets">
+          </div>
+          <div class="v-body">
+            <div class="v-title">
+              <h3>COSPLAY MEETS</h3>
+              <span class="material-symbols-outlined md-20">arrow_outward</span>
+            </div>
+            <p class="v-desc">Creative showcases, costume crafting meetups, and pop-culture celebrations during society events.</p>
           </div>
         </a>
       </div>
     </div>
   </section>
 
+  <!-- Interactive Cinephile Vibe Picker -->
+  <section class="vibe-section">
+    <div class="container">
+      <div class="vibe-container">
+        <span class="section-label">[ INTERACTIVE RECOMMENDER ]</span>
+        <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 900;">Find Your <span class="serif italic">Cinematic Vibe</span></h2>
+        <p style="color: var(--text-muted); margin-top: 8px;">Select a mood to discover society-recommended picks and past screening highlights.</p>
+
+        <div class="vibe-nav">
+          <button class="vibe-btn active" data-vibe="cyberpunk">⚡ Mind-Bending Cyberpunk</button>
+          <button class="vibe-btn" data-vibe="wholesome">🌸 Heartwarming Anime</button>
+          <button class="vibe-btn" data-vibe="thriller">🌀 Psychological Thriller</button>
+          <button class="vibe-btn" data-vibe="cinema">🎬 Epic Scale Cinema</button>
+        </div>
+
+        <div id="vibe-recommendation-display">
+          <!-- Rendered dynamically via JavaScript -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
   <section class="gallery-section">
     <div class="container">
-      <div style="text-align:center; margin-bottom:40px;">
+      <div style="text-align: center; margin-bottom: 50px;">
         <span class="section-label">[ GALLERY ]</span>
-        <h2 class="serif">Moments from our screenings</h2>
+        <h2 class="serif" style="font-size: 2.8rem;">Moments From Our Meetups</h2>
+        <p style="color: var(--text-muted); margin-top: 8px;">Click any photo to open full resolution view</p>
       </div>
+
       <div class="gallery-grid">
-        <!-- Bento order: mix landscape + portrait -->
-        <img class="g-large" src="static/images/gallery-1.avif" alt="gallery-1">
-        <img class="g-small" src="static/images/gallery-3.jpg" alt="gallery-3">
-        <img class="g-tall" src="static/images/gallery-2.jpg" alt="gallery-2">
-        <img class="g-wide" src="static/images/gallery-4.jpg" alt="gallery-4">
-        <img class="g-small" src="static/images/gallery-5.jpg" alt="gallery-5">
-        <img class="g-small" src="static/images/gallery-6.jpg" alt="gallery-6">
+        <img class="g-large" src="static/images/gallery-1.avif" alt="IIT Madras BS Open Air Anime Screening Night">
+        <img class="g-small" src="static/images/gallery-3.jpg" alt="Cinephile Panel Discussion Session">
+        <img class="g-tall" src="static/images/gallery-2.jpg" alt="Student Community Movie Watch Party">
+        <img class="g-wide" src="static/images/gallery-4.jpg" alt="Pixels & Panels Member Meetup">
+        <img class="g-small" src="static/images/gallery-5.jpg" alt="Cosplay & Fan Art Showcase">
+        <img class="g-small" src="static/images/gallery-6.jpg" alt="Film Critique & Review Roundtable">
       </div>
     </div>
   </section>
 
-  <section class="faq">
-    <div class="container">
-      <div style="text-align:center; margin-bottom:40px;">
-        <span class="section-label">[ FAQ ]</span>
-        <h2 class="serif">Frequently Asked Questions</h2>
-      </div>
-      <div style="max-width:900px; margin: 0 auto;">
-        <details>
-          <summary>
-            <span class="faq-q">How do I join Pixels &amp; Panels?</span>
-            <span class="material-symbols-outlined arrow-icon md-24">keyboard_arrow_down</span>
-          </summary>
-          <p>Fill the membership form linked in the Join Us page or email us at pixelsnpanels.society@study.iitm.ac.in.
-          </p>
-        </details>
-
-        <details>
-          <summary>
-            <span class="faq-q">What kind of events do you run?</span>
-            <span class="material-symbols-outlined arrow-icon md-24">keyboard_arrow_down</span>
-          </summary>
-          <p>We run screenings, panels, workshops and community meetups focused on cinema and animation.</p>
-        </details>
-
-        <details>
-          <summary>
-            <span class="faq-q">Can I propose a screening?</span>
-            <span class="material-symbols-outlined arrow-icon md-24">keyboard_arrow_down</span>
-          </summary>
-          <p>Yes — propose via email or message us on our socials. We consider community suggestions each semester.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-
+  <!-- Split Events Section -->
   <section class="split-section">
     <div class="split-left">
-      <span class="section-label" style="color: black;">[ Join the Movement ]</span>
-      <h2 style="font-size: clamp(3rem, 10vw, 8rem); line-height: 0.9; font-weight: 900;">Upcoming <br><span
-          class="serif italic">Events</span></h2>
-      <p style="margin-top: 2rem; max-width: 400px; font-weight: 500; font-size: 1.1rem;">We gather to celebrate,
-        analyze, and immerse ourselves in the worlds created by master storytellers.</p>
+      <span class="section-label">[ JOIN US ]</span>
+      <h2>Upcoming <br><span class="serif italic">Gatherings</span></h2>
+      <p>We meet regularly to watch, analyze, and immerse ourselves in stories by master directors and animators.</p>
+      <div style="margin-top: 40px;">
+        <a href="events.html" class="btn-secondary" style="background: #000; color: #fff; border: none;">
+          View Full Event Schedule
+          <span class="material-symbols-outlined md-18">calendar_month</span>
+        </a>
+      </div>
     </div>
+
     <div class="split-right">
       <div class="event-list">
-        <div class="event-item">
+        <div class="event-card-item">
           <div class="e-date">
             <h2>20 JAN</h2>
             <span>Tuesday</span>
           </div>
           <div class="e-info">
             <h4>Cine-Logic: Matrix Unplugged</h4>
-            <p>A deep dive into cyberpunk philosophy and digital aesthetics in modern cinema.</p>
+            <p>Analytical session on cyberpunk philosophy, world-building, and digital aesthetics.</p>
+            <div class="e-meta">
+              <span class="e-tag">SEMINAR</span>
+              <button class="btn-rsvp" data-event="Cine-Logic: Matrix Unplugged">
+                <span class="material-symbols-outlined md-18">notifications_active</span> RSVP Event
+              </button>
+            </div>
           </div>
         </div>
-        <div class="event-item">
+
+        <div class="event-card-item">
           <div class="e-date">
             <h2>21 JAN</h2>
             <span>Wednesday</span>
           </div>
           <div class="e-info">
             <h4>Anime Night: Your Name</h4>
-            <p>An open-air high-fidelity screening of Shinkai's masterpiece.</p>
+            <p>High-fidelity open air screening of Makoto Shinkai's masterpiece with student discussion.</p>
+            <div class="e-meta">
+              <span class="e-tag">SCREENING</span>
+              <button class="btn-rsvp" data-event="Anime Night: Your Name">
+                <span class="material-symbols-outlined md-18">notifications_active</span> RSVP Event
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-      <div style="margin-top: 3rem;">
-        <a href="events.html"
-          style="color: var(--teal); font-weight: 900; text-transform: uppercase; letter-spacing: 0.2em; display: inline-flex; align-items: center; gap: 10px;">
-          View Full Calendar
-          <span class="material-symbols-outlined md-24">arrow_outward</span>
-        </a>
       </div>
     </div>
   </section>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <a href="index.html" class="nav-logo">
-          <span class="material-symbols-outlined md-28">picture_in_picture_small</span>
-          <span>Pixels&Panels</span>
-        </a>
-        <p>Pixels & Panels — a student community at IIT Madras BS celebrating cinema, storytelling and visual culture.
-        </p>
+  <!-- FAQ Section -->
+  <section class="faq">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 50px;">
+        <span class="section-label">[ FAQ ]</span>
+        <h2 class="serif" style="font-size: 2.8rem;">Frequently Asked Questions</h2>
       </div>
 
-      <div class="footer-links">
-        <h4>Pages</h4>
-        <a href="index.html">Home</a>
-        <a href="events.html">Events</a>
-        <a href="about.html">About</a>
-      </div>
+      <div style="max-width: 840px; margin: 0 auto;">
+        <details>
+          <summary>
+            <span>How do I join Pixels & Panels?</span>
+            <span class="material-symbols-outlined arrow-icon">keyboard_arrow_down</span>
+          </summary>
+          <p>Any student enrolled in the IIT Madras BS Degree program can join! Simply click the "Join Our Community" link or follow our social channels on Instagram and LinkedIn for active onboarding forms.</p>
+        </details>
 
-      <div class="footer-links">
-        <h4>Social</h4>
-        <a href="https://www.instagram.com/pixelsnpanels.iitm/#">Instagram</a>
-        <a href="https://www.youtube.com/@pnp.society">Youtube</a>
-        <a href="https://www.linkedin.com/company/pnp-film-anime-art-popculture-society/">LinkedIn</a>
-      </div>
+        <details>
+          <summary>
+            <span>What kind of events do you organize?</span>
+            <span class="material-symbols-outlined arrow-icon">keyboard_arrow_down</span>
+          </summary>
+          <p>We organize open-air anime screenings, film discussions, panel breakdowns, cinematography workshops, and cosplay meetups throughout each academic term.</p>
+        </details>
 
-      <div class="footer-cta">
-        <a href="mailto:pixelsnpanels.society@study.iitm.ac.in" class="btn-cta">Contact Us</a>
+        <details>
+          <summary>
+            <span>Can I propose a movie or anime for screening?</span>
+            <span class="material-symbols-outlined arrow-icon">keyboard_arrow_down</span>
+          </summary>
+          <p>Yes! We actively take community proposals. Click the "Suggest Movie/Anime" button in the menu or hero section to submit your recommendation to the core team.</p>
+        </details>
       </div>
     </div>
+  </section>
 
-    <div class="container footer-bottom">
-      <div>&copy; 2025 PIXELS & PANELS. IIT MADRAS BS DEGREE.</div>
-      <div>IIT MADRAS BS DEGREE PROGRAM</div>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <span class="material-symbols-outlined md-28">movie_filter</span>
+            <span>Pixels&Panels</span>
+          </a>
+          <p>The official Movies & Anime Society of the IIT Madras BS Degree Programme. Fostering visual art and storytelling.</p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <a href="index.html">Home</a>
+          <a href="events.html">Events Schedule</a>
+          <a href="about.html">About Us</a>
+        </div>
+
+        <div class="footer-links">
+          <h4>Social Media</h4>
+          <a href="https://www.instagram.com/pixelsnpanels.iitm/#" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.youtube.com/@pnp.society" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://www.linkedin.com/company/pnp-film-anime-art-popculture-society/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+
+        <div class="footer-links">
+          <h4>Contact Us</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">pixelsnpanels.society@study.iitm.ac.in</p>
+          <div style="margin-top: 14px;">
+            <a href="mailto:pixelsnpanels.society@study.iitm.ac.in" class="btn-cta" style="padding: 8px 16px; font-size: 0.75rem;">Send Email</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 PIXELS & PANELS. IIT MADRAS BS DEGREE PROGRAMME.</div>
+        <div>Crafted by Students for Cinema & Anime Lovers</div>
+      </div>
     </div>
   </footer>
 
-  <script>
-    window.addEventListener('scroll', () => {
-      const nav = document.getElementById('navbar');
-      if (window.scrollY > 50) nav.classList.add('scrolled');
-      else nav.classList.remove('scrolled');
-    });
+  <!-- Screening Proposal Modal -->
+  <div id="proposal-modal" class="pnp-modal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-card">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <h3>Propose a Screening 🎬</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px;">Suggest a film, anime, or discussion topic for the next Pixels & Panels meetup.</p>
 
-    // Mobile nav toggle
-    (function () {
-      const toggle = document.querySelector('.nav-toggle');
-      const links = document.querySelector('.nav-links');
-      if (!toggle || !links) return;
-      toggle.addEventListener('click', () => links.classList.toggle('open'));
-      links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
-    })();
-  </script>
+      <form id="proposal-form">
+        <div class="form-group">
+          <label for="p-title">Movie / Anime Title</label>
+          <input type="text" id="p-title" name="title" placeholder="e.g. Akira, Spirited Away, Oppenheimer" required>
+        </div>
+
+        <div class="form-group">
+          <label for="p-type">Category</label>
+          <select id="p-type" name="category">
+            <option value="Anime Film">Anime Film</option>
+            <option value="Anime Series Screening">Anime Series Screening</option>
+            <option value="Live-Action Feature">Live-Action Feature</option>
+            <option value="Panel Review Topic">Panel Review Topic</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="p-reason">Why should we screen this?</label>
+          <textarea id="p-reason" name="reason" rows="3" placeholder="Tell us why the community will love watching or discussing this..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-cta" style="width: 100%; justify-center;">Submit Suggestion</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="static/js/main.js"></script>
 </body>
 
 </html>

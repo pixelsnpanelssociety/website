@@ -4,154 +4,273 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Events | Pixels & Panels</title>
+  <title>Events Schedule | Pixels & Panels</title>
+  <meta name="description" content="Explore upcoming movie screenings, anime nights, film panel breakdowns, and workshops by Pixels & Panels at IIT Madras BS.">
+  
   <link rel="stylesheet" href="static/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0&display=swap">
 </head>
 
 <body>
 
+  <!-- Navigation Bar -->
   <nav id="navbar">
     <a href="index.html" class="nav-logo">
-      <span class="material-symbols-outlined md-28">picture_in_picture_small</span>
+      <span class="material-symbols-outlined md-28">movie_filter</span>
       <span>Pixels&Panels</span>
     </a>
+
     <div class="nav-links">
       <a href="index.html">Home</a>
-      <a href="events.html">Events</a>
+      <a href="events.html" class="active">Events</a>
       <a href="about.html">About</a>
+      <a href="#" class="btn-cta trigger-proposal-modal">Propose Screening</a>
     </div>
-    <button class="nav-toggle" aria-label="Toggle menu"><span class="material-symbols-outlined md-28">menu</span></button>
-    <a href="https://tr.ee/pxVWWx1ZK_" class="btn-cta">
-      Join Us
-      <span class="material-symbols-outlined md-18">arrow_outward</span>
-    </a>
+
+    <button class="nav-toggle" aria-label="Toggle navigation menu">
+      <span class="material-symbols-outlined md-28">menu</span>
+    </button>
   </nav>
 
-
+  <!-- Page Header -->
   <header class="page-header">
     <div class="container">
       <span class="section-label">[ THE CALENDAR ]</span>
-      <h1>CINE <br><span class="serif italic">Schedule</span></h1>
+      <h1>Society <br><span class="serif italic">Events & Schedule</span></h1>
+      <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 600px; margin-top: 16px;">
+        Join us for open-air screenings, active discussion panels, cinematography breakdowns, and creative meetups.
+      </p>
     </div>
   </header>
 
-  <section>
+  <!-- Events Filtering & Main Section -->
+  <section style="padding-top: 60px;">
     <div class="container">
-      <div style="max-width: 1000px;">
+      
+      <!-- Filter Bar & Search -->
+      <div class="event-filter-bar">
+        <div class="event-pills">
+          <button class="event-filter-pill active" data-filter="all">All Events</button>
+          <button class="event-filter-pill" data-filter="screening">Screenings</button>
+          <button class="event-filter-pill" data-filter="panel">Panels</button>
+          <button class="event-filter-pill" data-filter="workshop">Workshops</button>
+        </div>
 
-        <div style="margin-bottom: 80px;">
-          <h2
-            style="color: var(--teal); font-size: 0.9rem; letter-spacing: 0.2em; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; margin-bottom: 40px;">
-            JANUARY 2026</h2>
+        <div class="event-search-wrapper">
+          <span class="material-symbols-outlined md-20">search</span>
+          <input type="text" id="event-search" placeholder="Search event, topic, or venue...">
+        </div>
+      </div>
 
-          <div class="event-item">
-            <div class="e-date">
-              <h2>20 JAN</h2>
-              <span>Tuesday</span>
-            </div>
-            <div class="e-info">
-              <h4>Cine-Logic: Matrix Unplugged</h4>
-              <p style="margin-bottom: 20px;">Analytical session on cyberpunk influences. Venue: LH-101.</p>
-              <span
-                style="background: var(--teal); color: black; padding: 5px 12px; font-size: 0.7rem; font-weight: 900; letter-spacing: 0.1em;">SEMINAR</span>
-            </div>
+      <!-- Events List -->
+      <div class="event-list" id="events-container">
+        
+        <!-- Event Card 1 -->
+        <div class="event-card-item" data-category="panel">
+          <div class="e-date">
+            <h2>20 JAN</h2>
+            <span>Tuesday</span>
           </div>
-
-          <div class="event-item">
-            <div class="e-date">
-              <h2>21 JAN</h2>
-              <span>Wednesday</span>
-            </div>
-            <div class="e-info">
-              <h4>Anime Night: Your Name</h4>
-              <p style="margin-bottom: 20px;">Open-air high-definition screening. Venue: OAT Area.</p>
-              <span
-                style="background: var(--teal); color: black; padding: 5px 12px; font-size: 0.7rem; font-weight: 900; letter-spacing: 0.1em;">SCREENING</span>
+          <div class="e-info" style="flex-grow: 1;">
+            <h4>Cine-Logic: Matrix Unplugged</h4>
+            <p>A deep dive into cyberpunk philosophy, digital world-building, and color palette design in 90s & 2000s sci-fi cinema.</p>
+            <div class="e-meta">
+              <span class="e-tag">PANEL</span>
+              <span style="color: var(--text-muted); font-size: 0.8rem; display: flex; align-items: center; gap: 4px;">
+                <span class="material-symbols-outlined md-18">location_on</span> LH-101 / Google Meet
+              </span>
+              <button class="btn-rsvp" data-event="Cine-Logic: Matrix Unplugged" style="margin-left: auto;">
+                <span class="material-symbols-outlined md-18">notifications_active</span> RSVP Event
+              </button>
             </div>
           </div>
         </div>
 
-        <div>
-          <h2
-            style="color: var(--teal); font-size: 0.9rem; letter-spacing: 0.2em; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; margin-bottom: 40px;">
-            FEBRUARY 2025</h2>
-
-          <div class="event-item">
-            <div class="e-date">
-              <h2>15 FEB</h2>
-              <span>Wednesday</span>
-            </div>
-            <div class="e-info">
-              <h4>Storytelling Masterclass</h4>
-              <p style="margin-bottom: 20px;">Advanced cinematography and panel layout for creators.</p>
-              <span
-                style="background: var(--teal); color: black; padding: 5px 12px; font-size: 0.7rem; font-weight: 900; letter-spacing: 0.1em;">WORKSHOP</span>
+        <!-- Event Card 2 -->
+        <div class="event-card-item" data-category="screening">
+          <div class="e-date">
+            <h2>21 JAN</h2>
+            <span>Wednesday</span>
+          </div>
+          <div class="e-info" style="flex-grow: 1;">
+            <h4>Anime Night: Your Name (Kimi no Na wa)</h4>
+            <p>Open-air high-definition screening of Makoto Shinkai's visual masterpiece followed by a soundtrack & themes discussion.</p>
+            <div class="e-meta">
+              <span class="e-tag" style="background: rgba(255, 183, 3, 0.2); color: var(--accent-gold); border-color: rgba(255, 183, 3, 0.4);">SCREENING</span>
+              <span style="color: var(--text-muted); font-size: 0.8rem; display: flex; align-items: center; gap: 4px;">
+                <span class="material-symbols-outlined md-18">location_on</span> OAT Amphitheatre & Discord Live
+              </span>
+              <button class="btn-rsvp" data-event="Anime Night: Your Name" style="margin-left: auto;">
+                <span class="material-symbols-outlined md-18">notifications_active</span> RSVP Event
+              </button>
             </div>
           </div>
         </div>
 
+        <!-- Event Card 3 -->
+        <div class="event-card-item" data-category="workshop">
+          <div class="e-date">
+            <h2>15 FEB</h2>
+            <span>Thursday</span>
+          </div>
+          <div class="e-info" style="flex-grow: 1;">
+            <h4>Storytelling & Panel Layout Masterclass</h4>
+            <p>Hands-on session exploring visual pacing, comic panel composition, and scene framing for aspiring visual creators.</p>
+            <div class="e-meta">
+              <span class="e-tag" style="background: rgba(6, 182, 212, 0.2); color: var(--accent-teal); border-color: rgba(6, 182, 212, 0.4);">WORKSHOP</span>
+              <span style="color: var(--text-muted); font-size: 0.8rem; display: flex; align-items: center; gap: 4px;">
+                <span class="material-symbols-outlined md-18">location_on</span> Virtual Workshop Room
+              </span>
+              <button class="btn-rsvp" data-event="Storytelling Masterclass" style="margin-left: auto;">
+                <span class="material-symbols-outlined md-18">notifications_active</span> RSVP Event
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event Card 4 -->
+        <div class="event-card-item" data-category="screening">
+          <div class="e-date">
+            <h2>28 FEB</h2>
+            <span>Saturday</span>
+          </div>
+          <div class="e-info" style="flex-grow: 1;">
+            <h4>Retro Anime Spotlight: Akira (1988)</h4>
+            <p>4K remastered screening of Katsuhiro Otomo's groundbreaking cyberpunk anime film that redefined global animation.</p>
+            <div class="e-meta">
+              <span class="e-tag" style="background: rgba(255, 183, 3, 0.2); color: var(--accent-gold); border-color: rgba(255, 183, 3, 0.4);">SCREENING</span>
+              <span style="color: var(--text-muted); font-size: 0.8rem; display: flex; align-items: center; gap: 4px;">
+                <span class="material-symbols-outlined md-18">location_on</span> Main Campus Auditorium
+              </span>
+              <button class="btn-rsvp" data-event="Akira 4K Screening" style="margin-left: auto;">
+                <span class="material-symbols-outlined md-18">notifications_active</span> RSVP Event
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- No Results Container -->
+      <div id="no-events-msg" style="display: none; text-align: center; padding: 60px 0; color: var(--text-muted);">
+        <span class="material-symbols-outlined md-36" style="margin-bottom: 12px; opacity: 0.5;">search_off</span>
+        <p>No matching events found for your search criteria.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Past Screenings Archive -->
+  <section style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 50px;">
+        <span class="section-label">[ ARCHIVE ]</span>
+        <h2 class="serif" style="font-size: 2.5rem;">Past Society Screenings</h2>
+        <p style="color: var(--text-muted); margin-top: 8px;">Highlights from previous term gatherings</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+        <div style="background: var(--bg-card); padding: 24px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+          <span style="color: var(--accent-gold); font-size: 0.75rem; font-weight: 800; text-transform: uppercase;">Nov 2024</span>
+          <h3 style="font-size: 1.2rem; font-weight: 800; margin: 8px 0;">Spirited Away & Ghibli Aesthetics</h3>
+          <p style="color: var(--text-muted); font-size: 0.85rem;">Explored Hayao Miyazaki's hand-drawn animation style, environmental themes, and folklore roots.</p>
+        </div>
+
+        <div style="background: var(--bg-card); padding: 24px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+          <span style="color: var(--accent-gold); font-size: 0.75rem; font-weight: 800; text-transform: uppercase;">Oct 2024</span>
+          <h3 style="font-size: 1.2rem; font-weight: 800; margin: 8px 0;">Cyberpunk 2077: Edgerunners Analysis</h3>
+          <p style="color: var(--text-muted); font-size: 0.85rem;">Focused on Studio Trigger's fast-paced editing, color scripting, and tragic character arcs.</p>
+        </div>
+
+        <div style="background: var(--bg-card); padding: 24px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+          <span style="color: var(--accent-gold); font-size: 0.75rem; font-weight: 800; text-transform: uppercase;">Sep 2024</span>
+          <h3 style="font-size: 1.2rem; font-weight: 800; margin: 8px 0;">Interstellar & Cosmic Scale Cinema</h3>
+          <p style="color: var(--text-muted); font-size: 0.85rem;">Discussed Christopher Nolan's practical effects, Hans Zimmer's pipe organ score, and theoretical physics.</p>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <a href="index.html" class="nav-logo">
-          <span class="material-symbols-outlined md-28">picture_in_picture_small</span>
-          <span>Pixels&Panels</span>
-        </a>
-        <p>Pixels & Panels — a student community at IIT Madras BS celebrating cinema, storytelling and visual culture.
-        </p>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <span class="material-symbols-outlined md-28">movie_filter</span>
+            <span>Pixels&Panels</span>
+          </a>
+          <p>The official Movies & Anime Society of the IIT Madras BS Degree Programme.</p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <a href="index.html">Home</a>
+          <a href="events.html">Events Schedule</a>
+          <a href="about.html">About Us</a>
+        </div>
+
+        <div class="footer-links">
+          <h4>Social Media</h4>
+          <a href="https://www.instagram.com/pixelsnpanels.iitm/#" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.youtube.com/@pnp.society" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://www.linkedin.com/company/pnp-film-anime-art-popculture-society/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+
+        <div class="footer-links">
+          <h4>Contact Us</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">pixelsnpanels.society@study.iitm.ac.in</p>
+          <div style="margin-top: 14px;">
+            <a href="mailto:pixelsnpanels.society@study.iitm.ac.in" class="btn-cta" style="padding: 8px 16px; font-size: 0.75rem;">Send Email</a>
+          </div>
+        </div>
       </div>
 
-      <div class="footer-links">
-        <h4>Pages</h4>
-        <a href="index.html">Home</a>
-        <a href="events.html">Events</a>
-        <a href="about.html">About</a>
+      <div class="footer-bottom">
+        <div>&copy; 2026 PIXELS & PANELS. IIT MADRAS BS DEGREE PROGRAMME.</div>
+        <div>Crafted by Students for Cinema & Anime Lovers</div>
       </div>
-
-      <div class="footer-links">
-        <h4>Social</h4>
-        <a href="https://www.instagram.com/pixelsnpanels.iitm/#">Instagram</a>
-        <a href="https://www.youtube.com/@pnp.society">Youtube</a>
-        <a href="https://www.linkedin.com/company/pnp-film-anime-art-popculture-society/">LinkedIn</a>
-      </div>
-
-      <div class="footer-cta">
-        <a href="mailto:pixelsnpanels.society@study.iitm.ac.in" class="btn-cta">Contact Us</a>
-      </div>
-    </div>
-
-    <div class="container footer-bottom">
-      <div>&copy; 2025 PIXELS & PANELS. IIT MADRAS BS.</div>
-      <div>IIT MADRAS BS DEGREE PROGRAM</div>
     </div>
   </footer>
 
-  <script>
-    window.addEventListener('scroll', () => {
-      const nav = document.getElementById('navbar');
-      if (window.scrollY > 50) nav.classList.add('scrolled');
-      else nav.classList.remove('scrolled');
-    });
+  <!-- Screening Proposal Modal -->
+  <div id="proposal-modal" class="pnp-modal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-card">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <h3>Propose a Screening 🎬</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px;">Suggest a film, anime, or discussion topic for the next Pixels & Panels meetup.</p>
 
-    (function(){
-      const toggle = document.querySelector('.nav-toggle');
-      const links = document.querySelector('.nav-links');
-      if (!toggle || !links) return;
-      toggle.addEventListener('click', () => links.classList.toggle('open'));
-      links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
-    })();
-  </script>
+      <form id="proposal-form">
+        <div class="form-group">
+          <label for="p-title">Movie / Anime Title</label>
+          <input type="text" id="p-title" name="title" placeholder="e.g. Akira, Spirited Away, Oppenheimer" required>
+        </div>
 
+        <div class="form-group">
+          <label for="p-type">Category</label>
+          <select id="p-type" name="category">
+            <option value="Anime Film">Anime Film</option>
+            <option value="Anime Series Screening">Anime Series Screening</option>
+            <option value="Live-Action Feature">Live-Action Feature</option>
+            <option value="Panel Review Topic">Panel Review Topic</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="p-reason">Why should we screen this?</label>
+          <textarea id="p-reason" name="reason" rows="3" placeholder="Tell us why the community will love watching or discussing this..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-cta" style="width: 100%; justify-center;">Submit Suggestion</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="static/js/main.js"></script>
 </body>
 
 </html>
